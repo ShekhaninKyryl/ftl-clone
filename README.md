@@ -73,6 +73,8 @@ NOTE: user can move only throuth hyperways
 ![image](https://github.com/user-attachments/assets/9cf3df6e-0293-499d-b658-3675917d6be8)
 ![image](https://github.com/user-attachments/assets/d0b2c919-a9f9-463d-9587-620280e32805)
 ![image](https://github.com/user-attachments/assets/7769f499-b01c-460e-a70d-d15036d92295)
+![image](https://github.com/user-attachments/assets/8047d019-2b0c-40ad-91ff-3330f500fba4)
+
 
 
 
