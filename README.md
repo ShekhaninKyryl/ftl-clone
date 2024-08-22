@@ -60,7 +60,7 @@ Some stars is empty, some may contains an enemy and some is a Store/Factrory whe
   
   ## How to play
 
-- Play ship started on one of hub root;
+- Player ship started on one of hub root;
 - Use LBM to set up moving to target node;
 NOTE: user can move only throuth hyperways
 ![image](https://github.com/user-attachments/assets/0ed6650e-6816-4155-9c37-511a42869886)
