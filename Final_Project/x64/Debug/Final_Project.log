@@ -1,0 +1,13 @@
+﻿  Game.cpp
+M:\CPP\Final_Project\Final_Project\Game.cpp(5,45): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+M:\CPP\Final_Project\Final_Project\Game.cpp(5,37): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+  Ship.cpp
+  UI_Player.cpp
+M:\CPP\Final_Project\Final_Project\UI_Player.cpp(75,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+M:\CPP\Final_Project\Final_Project\UI_Player.cpp(144,46): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  Generating Code...
+  Final_Project.vcxproj -> M:\CPP\Final_Project\x64\Debug\Final_Project.exe
