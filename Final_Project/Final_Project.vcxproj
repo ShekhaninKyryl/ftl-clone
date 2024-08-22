@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="EnemyShip.cpp" />
+    <ClCompile Include="Fight.cpp" />
     <ClCompile Include="Final_Project.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -148,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="Config.h" />
     <ClInclude Include="EnemyShip.h" />
+    <ClInclude Include="Fight.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Resources.h" />

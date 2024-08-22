@@ -54,13 +54,14 @@ void Ship::update(float deltaTime, Map* map) {
 void Ship::takeDamage(int damage)
 {
     health -= damage;
+    if (health < 0) health = 0;
     std::cout << "Ship under atack: " << damage << " demage, health: " << health << std::endl;
 }
 
 void Ship::dockToStar(Map* map)
 {
     moving = false;
-    star->player = this;
+    star->dockPlayer(this);
     star->setVisible(true);
     star->setLockVisible();
 
@@ -73,7 +74,7 @@ void Ship::dockToStar(Map* map)
 void Ship::dockToStar(StarNode* node, Map* map)
 {
     moving = false;
-    node->player = this;
+    node->dockPlayer(this);
     star = node;
     star->setVisible(true);
     star->setLockVisible();

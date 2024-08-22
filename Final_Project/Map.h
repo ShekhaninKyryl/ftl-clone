@@ -5,11 +5,12 @@
 #include <vector>
 #include <iterator>
 
-#include "Random.h"
 #include "StarNode.h"
 #include "StarNodeWithEnemy.h"
 #include "StarNodeStore.h"
 #include "StarNodeShadow.h"
+
+#include "Random.h"
 
 class Map {
 public:

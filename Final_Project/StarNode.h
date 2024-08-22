@@ -1,8 +1,10 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
 #include <vector>
 
 class Ship;
+class EnemyShip;
 
 
 class StarNode
@@ -16,6 +18,7 @@ public:
 	static unsigned getLastId();
 
 	void undockPlayer();
+	virtual void dockPlayer(Ship* player);
 
 	bool operator==(const StarNode& other) const {
 		return id == other.id;
@@ -30,6 +33,8 @@ public:
 	void resize(float zoomFactor);
 
 	Ship *player = nullptr;
+	EnemyShip* enemy = nullptr;
+
 	bool isVisible = false;
 	bool lockVisible = false;
 

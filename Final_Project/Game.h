@@ -4,17 +4,12 @@
 #include <memory>
 #include <iostream>
 #include <algorithm>
-#include <random>
 
 #include "Ship.h"
 #include "EnemyShip.h"
 #include "Map.h"
+#include "Fight.h"
 #include "UI.h"
-
-#include "Random.h"
-
-
-
 
 class Game {
 public: 
@@ -32,6 +27,7 @@ private:
 	sf::View view;
 
 	Ship playerShip;
+	Fight* fight;
 
 	Map* map;
 	UI* gameUI;

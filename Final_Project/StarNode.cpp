@@ -43,6 +43,11 @@ void StarNode::undockPlayer()
     player = nullptr;
 }
 
+void StarNode::dockPlayer(Ship* player)
+{
+    this->player = player;
+}
+
 void StarNode::setVisible(bool visible)
 {
     if (lockVisible) return;

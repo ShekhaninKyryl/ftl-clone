@@ -1,5 +1,6 @@
-#include "Random.h"
 #include <random>
+#include "Random.h"
+
 
 float randomFloat(float min, float max) {
     std::random_device rd;

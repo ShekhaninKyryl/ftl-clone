@@ -86,6 +86,31 @@ void Game::update(sf::Time deltaTime) {
     // Оновлюємо стан корабля
     playerShip.update(deltaTime.asSeconds(), map);
 
+    auto node = playerShip.getStar();
+    if (node->player && node->enemy && fight == nullptr) fight = new Fight(node->player, node->enemy);
+    if (fight) {
+        auto fightResult = fight->update(deltaTime.asSeconds());
+        switch (fightResult)
+        {
+        case FightState::Win: {
+            //use win case
+            break;
+        }
+        case FightState::Lose: {
+            //use lose case
+            break;
+        }
+        default: break;
+        };
+
+        if (fightResult == FightState::Win || fightResult == FightState::Lose) {
+            delete node->enemy;
+            node->enemy = nullptr;
+            delete fight;
+            fight = nullptr;
+        }
+    }
+
     gameUI->update();
 }
 
