@@ -71,10 +71,57 @@ NOTE: user can move only throuth hyperways
 
 ## References
 ![image](https://github.com/user-attachments/assets/4dd00b8c-9365-4b93-991e-ab76b6c70c19)
-![image](https://github.com/user-attachments/assets/9cf3df6e-0293-499d-b658-3675917d6be8)
-![image](https://github.com/user-attachments/assets/d0b2c919-a9f9-463d-9587-620280e32805)
 ![image](https://github.com/user-attachments/assets/7769f499-b01c-460e-a70d-d15036d92295)
 ![image](https://github.com/user-attachments/assets/8047d019-2b0c-40ad-91ff-3330f500fba4)
+
+## 24.08.2024 update
+
+- add config.json file 
+```
+{
+  "window": {
+    "width": 1920,
+    "height": 1080,
+    "fullscreen": true
+  },
+  "gameplay": {
+    "difficulty": "hard"
+  },
+  "map": {
+    "numCluster": 8,
+    "nodesPerCluster": 4,
+    "clusterRadius": 300.0,
+    "xSize": 5000,
+    "ySize": 5000,
+    "starNode": 4,
+    "starNodeShadow": 6,
+    "starNodeWithEnemy": 9,
+    "starNodeStore": 10
+  },
+  "font": {
+	  "font1": "./resources/fonts/IrpinType-Bold.ttf"
+  },
+  "texture": {
+	  "playerShip": "./resources/textures/Ship_Main_Icon.png",
+
+	  "node": "./resources/textures/Meteors/Meteor_01.png",
+	  "node1": "./resources/textures/Meteors/Meteor_02.png",
+	  "nodeShadow": "./resources/textures/Meteors/Meteor_03.png",
+	  "nodeShadow1": "./resources/textures/Meteors/Meteor_04.png",
+	  "nodeStore": "./resources/textures/Meteors/Meteor_05.png",
+	  "nodeStore1": "./resources/textures/Meteors/Meteor_06.png",
+	  "nodeWithEnemy": "./resources/textures/Meteors/Meteor_07.png",
+	  "nodeWithEnemy1": "./resources/textures/Meteors/Meteor_08.png"
+  }
+}
+```
+- add ship texture;
+- add meteor textures;
+- set the ship's direction to the direction of travel;
+![image](https://github.com/user-attachments/assets/bfd7bf9c-aa76-41a3-adbf-792133ff6b46)
+![image](https://github.com/user-attachments/assets/3346a764-4f38-47ff-8790-584bb79b4eae)
+
+
 
 
 
