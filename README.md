@@ -38,13 +38,14 @@ Some stars is empty, some may contains an enemy and some is a Store/Factrory whe
 
 - [ ] Fight
   - [x] Base Fight
-  - [ ] Remuneration
+  - [x] Remuneration
   - [ ] Type of Weapons
   - [ ] Escape
   - [ ] Module demage
 
 - [ ] UI
   - [x] Player Ship states (Health, Shield...)
+  - [ ] Battle mode
   - [ ] Enemy States
   - [ ] Esc / Pause
   - [ ] You won! / You died!
