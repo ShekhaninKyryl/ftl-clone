@@ -39,8 +39,8 @@ public:
 	bool lockVisible = false;
 
 protected:
-	sf::CircleShape nodeShape;
-	sf::Text text;
+	sf::Sprite nodeSprite;
+	sf::Texture* texture;
 
 private:
 	unsigned id;

@@ -56,13 +56,12 @@ void Game::processEvents() {
 
             // Zoom
             if (event.type == sf::Event::MouseWheelScrolled) {
-                // Get the scroll amount
                 float zoomFactor = 1.f;
                 if (event.mouseWheelScroll.delta > 0) {
-                    zoomFactor = 0.9f; // Zoom out (decrease size)
+                    zoomFactor = 0.9f;
                 }
                 else if (event.mouseWheelScroll.delta < 0) {
-                    zoomFactor = 1.1f; // Zoom in (increase size)
+                    zoomFactor = 1.1f;
                 }
 
                 map->resizeNodes(zoomFactor);
@@ -73,7 +72,7 @@ void Game::processEvents() {
                 viewSize *= zoomFactor;
                 view.setSize(viewSize);
 
-                // Optionally, adjust the view center to keep the same point under the mouse cursor
+                // adjust the view center to keep the same point under the mouse cursor
                 sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
                 sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition, view);
                 view.setCenter(worldMousePosition);
@@ -82,7 +81,7 @@ void Game::processEvents() {
             }
         }
         if (currentState == GameState::Battle) {
-            //керування боем
+            //Fight control
         }
     }
 }
@@ -91,7 +90,6 @@ void Game::update(sf::Time deltaTime) {
     auto playerNode = playerShip.getStar();
 
     if (currentState == GameState::Map) {
-        // Оновлюємо стан корабля
         playerShip.update(deltaTime.asSeconds(), map);
 
         if (playerNode->player && playerNode->enemy && fight == nullptr) {
@@ -133,22 +131,23 @@ void Game::render() {
     window.clear();
 
     if (currentState == GameState::Map) {
-        // Малюємо зоряну карту та кораблі
+        // Draw Map
         updateView(window, playerShip.getPosition());
-        // Малюємо шляхи
+        // Draw Nodes, Edges
         map->draw(window);
 
         playerShip.draw(window);
     }
     else if (currentState == GameState::Battle) {
-        // Малюємо битву
+        // Draw Battle
     }
 
    
 
-    // Встановлюємо стандартний вид для UI
+    // Set standart view for UI
     window.setView(window.getDefaultView());
     gameUI->render(window);
+    
 
     window.setView(view);
     window.display();
@@ -157,7 +156,7 @@ void Game::render() {
 void Game::updateView(sf::RenderWindow& window, const sf::Vector2f& playerPosition)
 {
     {
-        view.setCenter(playerPosition);   // Set the view's center to the player's position
-        window.setView(view);             // Apply the view to the window
+        view.setCenter(playerPosition);
+        window.setView(view);
     }
 }

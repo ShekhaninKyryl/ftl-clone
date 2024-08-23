@@ -8,7 +8,6 @@ void Map::addEdge(StarNode* x, StarNode* y)
         adjacencyX.push_back(y);  // Only add if the edge doesn't exist
     }
 
-    // Check if the edge already exists from y to x (because it's an undirected graph)
     auto& adjacencyY = adjacencyList[y->getId()];
     if (std::find(adjacencyY.begin(), adjacencyY.end(), x) == adjacencyY.end()) {
         adjacencyY.push_back(x);  // Only add if the edge doesn't exist
@@ -34,12 +33,12 @@ void Map::draw(sf::RenderWindow& window)
                 sf::VertexArray line(sf::Lines, 2);
 
                 line[0].position = node.getPosition();
-                line[0].color = sf::Color(255, 255, 255, 30);  // Set line color
+                line[0].color = sf::Color(255, 255, 255, 30);
 
 
 
                 line[1].position = neighbor->getPosition();
-                line[1].color = sf::Color(255, 255, 255, 30);  // Set line color
+                line[1].color = sf::Color(255, 255, 255, 30);
 
                 window.draw(line);
             }
@@ -103,8 +102,7 @@ void Map::neighborLinking(float radius)
                 }
             }
 
-            // You now have all the nodes within the radius in `closeNodes`
-            // You can proceed to link the node to its close nodes, or perform further operations here.
+
             for (auto closeNode : closeNodes) {
                 if (adjacencyList[node->getId()].size() > maxEdges) break;
                 addEdge(node, closeNode);
@@ -123,10 +121,11 @@ void Map::hubLinking()
 
 void Map::generateClusteredNodes(unsigned numClusters, unsigned nodesPerCluster, float clusterRadius)
 {
+    auto config = Config::getInstance();
     for (unsigned i = 0; i < numClusters; ++i) {
         // Generate hub node for the cluster
-        float hubX = randomFloat(100.f, 2000.f);
-        float hubY = randomFloat(100.f, 2000.f);
+        float hubX = randomFloat(100.f, config.xSize);
+        float hubY = randomFloat(100.f, config.ySize);
         StarNode* hubNode = new StarNode(hubX, hubY);
         hubNodes.push_back(hubNode);
 
@@ -134,41 +133,27 @@ void Map::generateClusteredNodes(unsigned numClusters, unsigned nodesPerCluster,
 
         // Generate child nodes around the hub
         for (unsigned j = 0; j < nodesPerCluster; ++j) {
-            float angle = randomFloat(0, 2 * 3.14159f);  // Random angle in radians
-            float distance = randomFloat(50.f, clusterRadius) + 20;  // Random distance from hub
+            float angle = randomFloat(0, 2 * 3.14159f);
+            float distance = randomFloat(50.f, clusterRadius) + 20;
 
             float nodeX = hubX + cos(angle) * distance;
             float nodeY = hubY + sin(angle) * distance;
 
             // Randomly decide the type of node
-            const int starNumber = randomInt(0, 9);
-            switch (starNumber)
-            {
-            case 0:
-            case 1: {
+            // Add config
+            const unsigned chooseStarNumber = randomInt(0, 9);
+            if (chooseStarNumber < config.starNodePct) {
                 nodes.push_back(new StarNode(nodeX, nodeY));
-                break;
+                continue;
             }
-            case 2:
-            case 3: 
-            case 4: {
+            else if (chooseStarNumber < config.starNodeShadowPct) {
                 nodes.push_back(new StarNodeShadow(nodeX, nodeY));
-                break;
+                continue;
             }
-            case 5:
-            case 6:
-            case 7:
-            case 8: {
+            else if (chooseStarNumber < config.starNodeWithEnemyPct) {
                 nodes.push_back(new StarNodeWithEnemy(nodeX, nodeY));
-                break;
-            }
-            case 9: {
-                nodes.push_back(new StarNodeStore(nodeX, nodeY));
-                break;
-            }
-            default:
-                break;
-            }
+                continue;
+            } else nodes.push_back(new StarNodeStore(nodeX, nodeY));
         }
     }
 }

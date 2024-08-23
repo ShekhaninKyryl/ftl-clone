@@ -36,7 +36,8 @@ public:
 	void lootResources(const Resources& loot, std::string& log);
 
 private:
-	sf::RectangleShape shipShape;
+	sf::Sprite shipSprite;
+	sf::Texture* texture;
 	StarNode* star;
 	Resources resources;
 

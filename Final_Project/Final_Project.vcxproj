@@ -151,6 +151,7 @@
     <ClInclude Include="EnemyShip.h" />
     <ClInclude Include="Fight.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Resources.h" />
     <ClInclude Include="Ship.h" />

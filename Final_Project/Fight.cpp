@@ -8,7 +8,6 @@ Fight::Fight(Ship* player, EnemyShip* enemy) : player(player), enemy(enemy)
 FightState Fight::update(float deltaTime)
 {
     if (player == nullptr || enemy == nullptr) return FightState::Idle;
-    // Простий радіус зіткнення
             std::cout << "Battle with the enemy!" << std::endl;
 
             std::string logStr;

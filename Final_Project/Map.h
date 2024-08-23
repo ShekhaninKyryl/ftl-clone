@@ -9,6 +9,7 @@
 #include "StarNodeWithEnemy.h"
 #include "StarNodeStore.h"
 #include "StarNodeShadow.h"
+#include "Config.h"
 
 #include "Random.h"
 
@@ -16,12 +17,14 @@ class Map {
 public:
    Map(unsigned nodesCount) : maxEdges(2)
     {
-        generateClusteredNodes(5, nodesCount / 3, 200);
+        auto config = Config::getInstance();
+        generateClusteredNodes(config.numCluster, config.nodesPerCluster, config.clusterRadius);
 
         adjacencyList.resize(nodes.size());
 
-        neighborLinking(200);
+        
         hubLinking();
+        neighborLinking(config.clusterRadius);
 
         return;
     }

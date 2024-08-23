@@ -1,5 +1,12 @@
-﻿  EnemyShip.cpp
-M:\CPP\ftl-clone\Final_Project\EnemyShip.cpp(30,33): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-M:\CPP\ftl-clone\Final_Project\EnemyShip.cpp(31,35): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-x64\Debug\Random.obj : warning LNK4042: object specified more than once; extras ignored
+﻿  Ship.cpp
+M:\CPP\ftl-clone\Final_Project\Ship.cpp(20,47): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+M:\CPP\ftl-clone\Final_Project\Ship.cpp(20,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
   Final_Project.vcxproj -> M:\CPP\ftl-clone\x64\Debug\Final_Project.exe

@@ -1,0 +1,36 @@
+{
+  "window": {
+    "width": 1920,
+    "height": 1080,
+    "fullscreen": true
+  },
+  "gameplay": {
+    "difficulty": "hard"
+  },
+  "map": {
+    "numCluster": 8,
+    "nodesPerCluster": 4,
+    "clusterRadius": 300.0,
+    "xSize": 5000,
+    "ySize": 5000,
+    "starNode": 4,
+    "starNodeShadow": 6,
+    "starNodeWithEnemy": 9,
+    "starNodeStore": 10
+  },
+  "font": {
+	  "font1": "./resources/fonts/IrpinType-Bold.ttf"
+  },
+  "texture": {
+	  "playerShip": "./resources/textures/Ship_Main_Icon.png",
+	  
+	  "node": "./resources/textures/Meteors/Meteor_01.png",
+	  "node1": "./resources/textures/Meteors/Meteor_02.png",
+	  "nodeShadow": "./resources/textures/Meteors/Meteor_03.png",
+	  "nodeShadow1": "./resources/textures/Meteors/Meteor_04.png",
+	  "nodeStore": "./resources/textures/Meteors/Meteor_05.png",
+	  "nodeStore1": "./resources/textures/Meteors/Meteor_06.png",
+	  "nodeWithEnemy": "./resources/textures/Meteors/Meteor_07.png",
+	  "nodeWithEnemy1": "./resources/textures/Meteors/Meteor_08.png"
+  }
+}

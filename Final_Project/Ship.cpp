@@ -10,15 +10,20 @@ Ship::Ship(float x, float y) :
     maneuverability(15),
     star(nullptr)
 {
-    shipShape.setSize(sf::Vector2f(30.f, 15.f));
-    shipShape.setOrigin(15.f, 7.5f);
-    shipShape.setFillColor(sf::Color::Blue);
-    shipShape.setPosition(x, y);
+    texture = &Config::getInstance().textures["playerShip"];
+    shipSprite.setTexture(*texture);
+
+    auto tSize = texture->getSize();
+    float scale = 64.f / tSize.x;
+
+    shipSprite.setScale(scale, scale);
+    shipSprite.setOrigin(tSize.x / 2, tSize.y / 2);
+    shipSprite.setPosition(x, y);
 }
 
 
 void Ship::draw(sf::RenderWindow& window) {
-    window.draw(shipShape);
+    window.draw(shipSprite);
 }
 
 void Ship::moveTo(StarNode* targetStar, Map* map)
@@ -36,13 +41,18 @@ void Ship::moveTo(StarNode* targetStar, Map* map)
 
 void Ship::update(float deltaTime, Map* map) {
     if (moving) {
-        sf::Vector2f currentPosition = shipShape.getPosition();
+        sf::Vector2f currentPosition = shipSprite.getPosition();
         sf::Vector2f direction = star->getPosition() - currentPosition;
         double distance = sqrt(pow(direction.x, 2) + pow(direction.y, 2));
+       
+
+        float angleRad = atan2(direction.y, direction.x);
+        float angleDeg = angleRad * 180 / 3.14159265f;
+        shipSprite.setRotation(angleDeg + 90);
 
         if (distance > 1.f) {
             direction /= static_cast<float>(distance);
-            shipShape.move(direction * speed * deltaTime);
+            shipSprite.move(direction * speed * deltaTime);
         }
         else dockToStar(map);
     }
@@ -65,7 +75,7 @@ void Ship::dockToStar(Map* map)
     star->setLockVisible();
 
     if (star) {
-        shipShape.setPosition(star->getPosition());
+        shipSprite.setPosition(star->getPosition());
         map->higlightNodes(star->getId());
     }
 }
@@ -79,18 +89,14 @@ void Ship::dockToStar(StarNode* node, Map* map)
     star->setLockVisible();
 
     if (star) {
-        shipShape.setPosition(star->getPosition());
+        shipSprite.setPosition(star->getPosition());
         map->higlightNodes(star->getId());
     }
 }
 
 void Ship::resize(float zoomFactor)
 {
-    auto size = shipShape.getSize();
-    size *= zoomFactor;
-
-    shipShape.setSize(size);
-    shipShape.setOrigin(size.x / 2, size.y / 2);
+    shipSprite.setScale(shipSprite.getScale().x * zoomFactor, shipSprite.getScale().y * zoomFactor);
 }
 
 StarNode* Ship::getStar()
@@ -99,7 +105,7 @@ StarNode* Ship::getStar()
 }
 
 sf::Vector2f Ship::getPosition() const {
-    return shipShape.getPosition();
+    return shipSprite.getPosition();
 }
 
 int Ship::getHealth() const {

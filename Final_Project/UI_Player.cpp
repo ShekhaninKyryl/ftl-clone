@@ -3,7 +3,7 @@
 UI_Player::UI_Player(Ship* player)
 {
 	this->player = player;
-    font = FontManager::getInstance().fonts["font1"];
+    font = Config::getInstance().fonts["font1"];
 
     initHealth();
     initShield();

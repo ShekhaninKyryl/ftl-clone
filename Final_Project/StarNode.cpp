@@ -4,28 +4,23 @@
 
 
 StarNode::StarNode(float x, float y) : id(nextId++) {
-    nodeShape.setRadius(15.f);
-    nodeShape.setOrigin(15.f,15.f);
-    nodeShape.setFillColor(sf::Color::Green);
-    nodeShape.setPosition(x, y);
+    texture = &Config::getInstance().textures["node"];
+    nodeSprite.setTexture(*texture);
 
+    auto tSize = texture->getSize();
+    float scale = 64.f / tSize.x;
 
-    text.setFont(FontManager::getInstance().fonts["font1"]); 
-    text.setCharacterSize(15);
-    text.setFillColor(sf::Color::White);
-    text.setString(std::to_string(id));
-    text.setPosition(
-        nodeShape.getPosition().x + nodeShape.getRadius(),
-        nodeShape.getPosition().y + nodeShape.getRadius());
+    nodeSprite.setScale(scale, scale);
+    nodeSprite.setOrigin(tSize.x / 2, tSize.y / 2);
+    nodeSprite.setPosition(x, y);
 }
 
 void StarNode::draw(sf::RenderWindow& window) const {
-    window.draw(nodeShape);
-    window.draw(text);
+    window.draw(nodeSprite);
 }
 
 sf::Vector2f StarNode::getPosition() const {
-    return nodeShape.getPosition();
+    return nodeSprite.getPosition();
 }
 
 unsigned StarNode::getId() const
@@ -52,8 +47,8 @@ void StarNode::setVisible(bool visible)
 {
     if (lockVisible) return;
     isVisible = visible;
-    if (visible) nodeShape.setFillColor(sf::Color::Green);
-    else nodeShape.setFillColor(sf::Color(64,64,64));
+    if (visible) nodeSprite.setColor(sf::Color::White);
+    else nodeSprite.setColor(sf::Color(64, 64, 64, 128));
 }
 
 void StarNode::setLockVisible()
@@ -63,10 +58,10 @@ void StarNode::setLockVisible()
 
 void StarNode::resize(float zoomFactor)
 {
-    auto nodeSize = nodeShape.getRadius();
-    nodeSize *= zoomFactor;
-    nodeShape.setRadius(nodeSize);
-    nodeShape.setOrigin(nodeSize, nodeSize);
+    auto size = nodeSprite.getGlobalBounds().getSize();
+    if (size.x < 32.f && zoomFactor < 1.f) return;
+    if (size.x > 96.f && zoomFactor > 1.f) return;
+    nodeSprite.setScale(nodeSprite.getScale().x * zoomFactor, nodeSprite.getScale().y * zoomFactor);
 }
 
 unsigned StarNode::nextId = 0;
