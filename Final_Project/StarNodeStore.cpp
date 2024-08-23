@@ -1,9 +1,10 @@
 #include "StarNodeStore.h"
 #include "Config.h"
+#include "Random.h"
 
 StarNodeStore::StarNodeStore(float x, float y): StarNode(x, y)
 {
-	texture = &Config::getInstance().textures["nodeStore"];
+	texture = &Config::getInstance().textures[randomBool() ? "nodeStore" : "nodeStore1"];
 	nodeSprite.setTexture(*texture);
 
 	auto tSize = texture->getSize();

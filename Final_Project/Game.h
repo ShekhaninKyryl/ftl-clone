@@ -18,7 +18,7 @@ enum class GameState {
 
 class Game {
 public: 
-	Game();
+	Game(sf::RenderWindow& window);
 	void run();
 
 private:
@@ -28,7 +28,7 @@ private:
 
 	void updateView(sf::RenderWindow& window, const sf::Vector2f& playerPosition);
 
-	sf::RenderWindow window;
+	sf::RenderWindow& window;
 	sf::View view;
 	GameState currentState;
 
@@ -37,4 +37,7 @@ private:
 	Fight* fight;
 	Map* map;
 	UI* gameUI;
+
+	sf::Texture* backgroundTexture;
+	sf::Sprite backgroundSprite;
 };

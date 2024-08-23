@@ -1,8 +1,10 @@
 #include "Game.h"
+#include "Config.h"
 
 
 
-Game::Game() : window(sf::VideoMode(1200.f, 1000.f), "FTL Clone"), playerShip(100.f, 100.f), currentState(GameState::Map) {
+Game::Game(sf::RenderWindow& window) : window(window), playerShip(100.f, 100.f), currentState(GameState::Map) {
+
     auto w_view = window.getView();
     view.setSize(w_view.getSize());
     view.setCenter(w_view.getCenter());
@@ -19,6 +21,26 @@ Game::Game() : window(sf::VideoMode(1200.f, 1000.f), "FTL Clone"), playerShip(10
 
 
     gameUI = new UI(&playerShip);
+
+    int backgroundTextureChoose = randomInt(1, 3);
+    if (backgroundTextureChoose == 1) {
+        backgroundTexture = &Config::getInstance().textures["background1"];
+    }
+
+    if (backgroundTextureChoose == 2) {
+        backgroundTexture = &Config::getInstance().textures["background2"];
+    }
+
+    if (backgroundTextureChoose == 3) {
+        backgroundTexture = &Config::getInstance().textures["background3"];
+    }
+
+    backgroundSprite.setTexture(*backgroundTexture);
+    sf::Vector2u textureSize = backgroundTexture->getSize();
+    sf::Vector2u windowSize = window.getSize();
+    float scaleX = static_cast<float>(windowSize.x) / textureSize.x;
+    float scaleY = static_cast<float>(windowSize.y) / textureSize.y;
+    backgroundSprite.setScale(scaleX, scaleY);
 }
 
 void Game::run() {
@@ -130,9 +152,14 @@ void Game::update(sf::Time deltaTime) {
 void Game::render() {
     window.clear();
 
+    // Draw background
+    window.setView(window.getDefaultView());
+    window.draw(backgroundSprite);
+
     if (currentState == GameState::Map) {
         // Draw Map
         updateView(window, playerShip.getPosition());
+
         // Draw Nodes, Edges
         map->draw(window);
 
@@ -147,6 +174,7 @@ void Game::render() {
     // Set standart view for UI
     window.setView(window.getDefaultView());
     gameUI->render(window);
+
     
 
     window.setView(view);

@@ -1,10 +1,11 @@
 #include <string>
 #include "StarNode.h"
 #include "Config.h"
+#include "Random.h"
 
 
 StarNode::StarNode(float x, float y) : id(nextId++) {
-    texture = &Config::getInstance().textures["node"];
+    texture = &Config::getInstance().textures[randomBool() ? "node" : "node1"];
     nodeSprite.setTexture(*texture);
 
     auto tSize = texture->getSize();

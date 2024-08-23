@@ -1,12 +1,2 @@
-﻿  Ship.cpp
-M:\CPP\ftl-clone\Final_Project\Ship.cpp(20,47): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-M:\CPP\ftl-clone\Final_Project\Ship.cpp(20,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
+﻿  Game.cpp
   Final_Project.vcxproj -> M:\CPP\ftl-clone\x64\Debug\Final_Project.exe

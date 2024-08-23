@@ -110,5 +110,16 @@ private:
         if (!textures["nodeWithEnemy1"].loadFromFile(configJson["texture"]["nodeWithEnemy1"])) {
             std::cout << "Can't load nodeWithEnemy1" << std::endl;
         }
+
+        //Background
+        if (!textures["background1"].loadFromFile(configJson["texture"]["background1"])) {
+            std::cout << "Can't load background1" << std::endl;
+        }
+        if (!textures["background2"].loadFromFile(configJson["texture"]["background2"])) {
+            std::cout << "Can't load background2" << std::endl;
+        }
+        if (!textures["background3"].loadFromFile(configJson["texture"]["background3"])) {
+            std::cout << "Can't load background3" << std::endl;
+        }
     }
 };

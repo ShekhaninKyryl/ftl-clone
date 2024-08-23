@@ -1,10 +1,11 @@
 #include "StarNodeShadow.h"
 #include "EnemyShip.h"
 #include "Config.h"
+#include "Random.h"
 
 StarNodeShadow::StarNodeShadow(float x, float y) : StarNode(x, y)
 {
-	texture = &Config::getInstance().textures["nodeShadow"];
+	texture = &Config::getInstance().textures[randomBool() ? "nodeShadow": "nodeShadow1"];
     nodeSprite.setTexture(*texture);
 
     auto tSize = texture->getSize();

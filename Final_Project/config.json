@@ -31,6 +31,10 @@
 	  "nodeStore": "./resources/textures/Meteors/Meteor_05.png",
 	  "nodeStore1": "./resources/textures/Meteors/Meteor_06.png",
 	  "nodeWithEnemy": "./resources/textures/Meteors/Meteor_07.png",
-	  "nodeWithEnemy1": "./resources/textures/Meteors/Meteor_08.png"
+	  "nodeWithEnemy1": "./resources/textures/Meteors/Meteor_08.png",
+	  
+	  "background1": "./resources/textures/backgrounds/Blue_Nebula_02-1024x1024.png",
+	  "background2": "./resources/textures/backgrounds/Green_Nebula_05-1024x1024.png",
+	  "background3": "./resources/textures/backgrounds/Purple_Nebula_01-1024x1024.png"
   }
 }
