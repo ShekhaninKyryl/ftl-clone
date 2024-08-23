@@ -141,7 +141,7 @@ void UI_Player::updateResources()
 void UI_Player::renderResources(sf::RenderWindow& window)
 {
     auto windowSize = window.getSize();
-    resources.setPosition(10.f, windowSize.y - 30);
+    resources.setPosition(10.f, static_cast<float>(windowSize.y) - 30.f);
     window.draw(resources);
 }
 

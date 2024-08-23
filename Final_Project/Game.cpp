@@ -2,7 +2,7 @@
 
 
 
-Game::Game() : window(sf::VideoMode(1200.f, 1000.f), "FTL Clone"), playerShip(100.f, 100.f) {
+Game::Game() : window(sf::VideoMode(1200.f, 1000.f), "FTL Clone"), playerShip(100.f, 100.f), currentState(GameState::Map) {
     auto w_view = window.getView();
     view.setSize(w_view.getSize()); // Initial view size
     view.setCenter(w_view.getCenter()); // Center the view
@@ -38,77 +38,92 @@ void Game::processEvents() {
         if (event.type == sf::Event::Closed)
             window.close();
 
+        if (currentState == GameState::Map) {
 
-        // Перевіряємо натискання кнопки миші
-        if (event.type == sf::Event::MouseButtonPressed) {
-            sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+            // Перевіряємо натискання кнопки миші
+            if (event.type == sf::Event::MouseButtonPressed) {
+                sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
 
-            // Перевіряємо, чи натиснуто на вузол
-            playerShip.getStar()->getId();
-            for (const auto& node : map->getlinkedNodes(playerShip.getStar()->getId())) {
-                sf::Vector2f nodePos = node->getPosition();
-                if (sqrt(pow(mousePos.x - nodePos.x, 2) + pow(mousePos.y - nodePos.y, 2)) < 20.f) {
-                    playerShip.moveTo(node, map);
+                // Перевіряємо, чи натиснуто на вузол
+                playerShip.getStar()->getId();
+                for (const auto& node : map->getlinkedNodes(playerShip.getStar()->getId())) {
+                    sf::Vector2f nodePos = node->getPosition();
+                    if (sqrt(pow(mousePos.x - nodePos.x, 2) + pow(mousePos.y - nodePos.y, 2)) < 20.f) {
+                        playerShip.moveTo(node, map);
+                    }
                 }
             }
+
+            // Zoom
+            if (event.type == sf::Event::MouseWheelScrolled) {
+                // Get the scroll amount
+                float zoomFactor = 1.f;
+                if (event.mouseWheelScroll.delta > 0) {
+                    zoomFactor = 0.9f; // Zoom out (decrease size)
+                }
+                else if (event.mouseWheelScroll.delta < 0) {
+                    zoomFactor = 1.1f; // Zoom in (increase size)
+                }
+
+                map->resizeNodes(zoomFactor);
+                playerShip.resize(zoomFactor);
+
+                // Adjust view size
+                sf::Vector2f viewSize = view.getSize();
+                viewSize *= zoomFactor;
+                view.setSize(viewSize);
+
+                // Optionally, adjust the view center to keep the same point under the mouse cursor
+                sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+                sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition, view);
+                view.setCenter(worldMousePosition);
+
+                window.setView(view);
+            }
         }
-
-        // Zoom
-        if (event.type == sf::Event::MouseWheelScrolled) {
-            // Get the scroll amount
-            float zoomFactor = 1.f;
-            if (event.mouseWheelScroll.delta > 0) {
-                zoomFactor = 0.9f; // Zoom out (decrease size)
-            }
-            else if (event.mouseWheelScroll.delta < 0) {
-                zoomFactor = 1.1f; // Zoom in (increase size)
-            }
-
-            map->resizeNodes(zoomFactor);
-            playerShip.resize(zoomFactor);
-
-            // Adjust view size
-            sf::Vector2f viewSize = view.getSize();
-            viewSize *= zoomFactor;
-            view.setSize(viewSize);
-
-            // Optionally, adjust the view center to keep the same point under the mouse cursor
-            sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-            sf::Vector2f worldMousePosition = window.mapPixelToCoords(mousePosition, view);
-            view.setCenter(worldMousePosition);
-
-            window.setView(view);
+        if (currentState == GameState::Battle) {
+            //керування боем
         }
     }
 }
 
 void Game::update(sf::Time deltaTime) {
-    // Оновлюємо стан корабля
-    playerShip.update(deltaTime.asSeconds(), map);
+    auto playerNode = playerShip.getStar();
 
-    auto node = playerShip.getStar();
-    if (node->player && node->enemy && fight == nullptr) fight = new Fight(node->player, node->enemy);
-    if (fight) {
-        auto fightResult = fight->update(deltaTime.asSeconds());
-        switch (fightResult)
-        {
-        case FightState::Win: {
-            //use win case
-            break;
-        }
-        case FightState::Lose: {
-            //use lose case
-            break;
-        }
-        default: break;
-        };
+    if (currentState == GameState::Map) {
+        // Оновлюємо стан корабля
+        playerShip.update(deltaTime.asSeconds(), map);
 
-        if (fightResult == FightState::Win || fightResult == FightState::Lose) {
-            delete node->enemy;
-            node->enemy = nullptr;
-            delete fight;
-            fight = nullptr;
+        if (playerNode->player && playerNode->enemy && fight == nullptr) {
+            fight = new Fight(playerNode->player, playerNode->enemy);
+            currentState = GameState::Battle;
         }
+    } 
+    if (currentState == GameState::Battle) {
+        if (fight) {
+            auto fightResult = fight->update(deltaTime.asSeconds());
+            switch (fightResult)
+            {
+            case FightState::Win: {
+                // use win case
+                break;
+            }
+            case FightState::Lose: {
+                //use lose case
+                break;
+            }
+            default: break;
+            };
+
+            if (fightResult == FightState::Win || fightResult == FightState::Lose) {
+                delete playerNode->enemy;
+                playerNode->enemy = nullptr;
+                delete fight;
+                fight = nullptr;
+                currentState = GameState::Map;
+            }
+        }
+
     }
 
     gameUI->update();
@@ -117,12 +132,19 @@ void Game::update(sf::Time deltaTime) {
 void Game::render() {
     window.clear();
 
-    updateView(window, playerShip.getPosition());
-    
-    // Малюємо шляхи
-    map->draw(window);
+    if (currentState == GameState::Map) {
+        // Малюємо зоряну карту та кораблі
+        updateView(window, playerShip.getPosition());
+        // Малюємо шляхи
+        map->draw(window);
 
-    playerShip.draw(window);
+        playerShip.draw(window);
+    }
+    else if (currentState == GameState::Battle) {
+        // Малюємо битву
+    }
+
+   
 
     // Встановлюємо стандартний вид для UI
     window.setView(window.getDefaultView());

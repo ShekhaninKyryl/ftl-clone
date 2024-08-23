@@ -1,10 +1,11 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include "Resources.h"
 
-class StarNode;
-class Map;
-class Resources;
+#include <SFML/Graphics.hpp>
+#include <iostream>
+
+#include "Resources.h"
+#include "StarNode.h"
+#include "Map.h"
 
 class Ship
 {
@@ -15,7 +16,7 @@ public:
 	void draw(sf::RenderWindow& window);
 	void moveTo(StarNode* targetStar, Map* map);
 	void update(float deltaTime, Map* map);
-	void takeDamage(int damage);
+	void takeDamage(int damage, std::string& log);
 	void dockToStar(Map* map);
 	void dockToStar(StarNode* node, Map* map);
 	void resize(float zoomFactor);
@@ -31,6 +32,8 @@ public:
 
 	int getFuel() const;
 	int getMoney() const;
+
+	void lootResources(const Resources& loot, std::string& log);
 
 private:
 	sf::RectangleShape shipShape;

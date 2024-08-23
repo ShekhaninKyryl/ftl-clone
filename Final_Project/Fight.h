@@ -1,7 +1,10 @@
 #pragma once
 
-class Ship;
-class EnemyShip;
+#include <iostream>
+#include <vector>
+
+#include "Ship.h"
+#include "EnemyShip.h"
 
 
 enum class FightState
@@ -21,5 +24,6 @@ public:
 private:
 	Ship* player;
 	EnemyShip* enemy;
+	std::vector<std::string> logs;
 
 };

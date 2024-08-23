@@ -1,7 +1,4 @@
-#include <iostream>
 #include "Ship.h"
-#include "StarNode.h"
-#include "Map.h"
 
 Ship::Ship(float x, float y) : 
     moving(false), 
@@ -51,11 +48,13 @@ void Ship::update(float deltaTime, Map* map) {
     }
 }
 
-void Ship::takeDamage(int damage)
+void Ship::takeDamage(int damage, std::string& log)
 {
     health -= damage;
     if (health < 0) health = 0;
     std::cout << "Ship under atack: " << damage << " demage, health: " << health << std::endl;
+
+    log = std::string("Ship under atack: " + std::to_string(damage) + " demage, health: " + std::to_string(health));
 }
 
 void Ship::dockToStar(Map* map)
@@ -135,4 +134,12 @@ int Ship::getFuel() const
 int Ship::getMoney() const
 {
     return resources.getMoney();
+}
+
+void Ship::lootResources(const Resources& loot, std::string& log)
+{
+    std::cout << "You looted: " << loot.getFuel() << " fuel, and " << loot.getMoney() << " money!" << std::endl;
+    resources += loot;
+
+    log = std::string("You looted: " + std::to_string(loot.getFuel()) + " fuel, and " + std::to_string(loot.getMoney()) + " money!");
 }

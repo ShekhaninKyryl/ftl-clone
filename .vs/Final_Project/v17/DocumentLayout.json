@@ -1,12 +1,262 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "M:\\CPP\\ftl-clone\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\EnemyShip.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\EnemyShip.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\Fight.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\Fight.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\EnemyShip.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\EnemyShip.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\Ship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\Ship.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\Ship.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\Ship.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\Fight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\Fight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\UI_Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\UI_Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\Resources.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\Resources.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\Resources.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\Resources.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|M:\\CPP\\ftl-clone\\Final_Project\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{62131159-4C1B-4E20-B3EF-785F595BE620}|Final_Project\\Final_Project.vcxproj|solutionrelative:Final_Project\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 13,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Map.h",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\Map.h",
+              "RelativeDocumentMoniker": "Final_Project\\Map.h",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\Map.h",
+              "RelativeToolTip": "Final_Project\\Map.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-23T00:01:07.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Map.cpp",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\Map.cpp",
+              "RelativeDocumentMoniker": "Final_Project\\Map.cpp",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\Map.cpp",
+              "RelativeToolTip": "Final_Project\\Map.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-23T00:01:03.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UI.h",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\UI.h",
+              "RelativeDocumentMoniker": "Final_Project\\UI.h",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\UI.h",
+              "RelativeToolTip": "Final_Project\\UI.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-22T23:47:41.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Game.h",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\Game.h",
+              "RelativeDocumentMoniker": "Final_Project\\Game.h",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\Game.h",
+              "RelativeToolTip": "Final_Project\\Game.h",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAhwCQAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-22T23:38:07.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UI_Player.cpp",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\UI_Player.cpp",
+              "RelativeDocumentMoniker": "Final_Project\\UI_Player.cpp",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\UI_Player.cpp",
+              "RelativeToolTip": "Final_Project\\UI_Player.cpp",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAAAIcAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-22T23:33:11.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ship.cpp",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\Ship.cpp",
+              "RelativeDocumentMoniker": "Final_Project\\Ship.cpp",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\Ship.cpp",
+              "RelativeToolTip": "Final_Project\\Ship.cpp",
+              "ViewState": "AQIAABgAAAAAAAAAAAAhwDIAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-22T23:28:37.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Ship.h",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\Ship.h",
+              "RelativeDocumentMoniker": "Final_Project\\Ship.h",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\Ship.h",
+              "RelativeToolTip": "Final_Project\\Ship.h",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAhwBIAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-22T23:26:41.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Game.cpp",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\Game.cpp",
+              "RelativeDocumentMoniker": "Final_Project\\Game.cpp",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\Game.cpp",
+              "RelativeToolTip": "Final_Project\\Game.cpp",
+              "ViewState": "AQIAADgAAAAAAAAAAAAAAGsAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-22T23:26:13.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Resources.h",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\Resources.h",
+              "RelativeDocumentMoniker": "Final_Project\\Resources.h",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\Resources.h",
+              "RelativeToolTip": "Final_Project\\Resources.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-22T23:17:33.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Resources.cpp",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\Resources.cpp",
+              "RelativeDocumentMoniker": "Final_Project\\Resources.cpp",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\Resources.cpp",
+              "RelativeToolTip": "Final_Project\\Resources.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-22T23:17:44.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Fight.h",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\Fight.h",
+              "RelativeDocumentMoniker": "Final_Project\\Fight.h",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\Fight.h",
+              "RelativeToolTip": "Final_Project\\Fight.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-22T23:04:08.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EnemyShip.h",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\EnemyShip.h",
+              "RelativeDocumentMoniker": "Final_Project\\EnemyShip.h",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\EnemyShip.h",
+              "RelativeToolTip": "Final_Project\\EnemyShip.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-22T23:02:04.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EnemyShip.cpp",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\EnemyShip.cpp",
+              "RelativeDocumentMoniker": "Final_Project\\EnemyShip.cpp",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\EnemyShip.cpp",
+              "RelativeToolTip": "Final_Project\\EnemyShip.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-22T23:01:48.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Fight.cpp",
+              "DocumentMoniker": "M:\\CPP\\ftl-clone\\Final_Project\\Fight.cpp",
+              "RelativeDocumentMoniker": "Final_Project\\Fight.cpp",
+              "ToolTip": "M:\\CPP\\ftl-clone\\Final_Project\\Fight.cpp",
+              "RelativeToolTip": "Final_Project\\Fight.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-22T23:01:01.804Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

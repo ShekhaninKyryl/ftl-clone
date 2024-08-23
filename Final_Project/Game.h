@@ -11,6 +11,11 @@
 #include "Fight.h"
 #include "UI.h"
 
+enum class GameState {
+	Map,
+	Battle
+};
+
 class Game {
 public: 
 	Game();
@@ -25,10 +30,11 @@ private:
 
 	sf::RenderWindow window;
 	sf::View view;
+	GameState currentState;
 
 	Ship playerShip;
-	Fight* fight;
 
+	Fight* fight;
 	Map* map;
 	UI* gameUI;
 };
