@@ -24,6 +24,8 @@ public:
 private:
 	Ship* player;
 	EnemyShip* enemy;
+
+	// For UI_Battle
 	std::vector<std::string> logs;
 
 };

@@ -1,5 +1,5 @@
-// FontManager.h
 #pragma once
+
 #include <SFML/Graphics.hpp>
 #include <string>
 #include <map>
@@ -8,7 +8,7 @@
 class FontManager {
 public:
     static FontManager& getInstance() {
-        static FontManager instance; // Guaranteed to be destroyed, instantiated on first use
+        static FontManager instance; 
         return instance;
     }
 
@@ -16,6 +16,8 @@ public:
 
 private:
     FontManager() {
+        // Add resources
+        // Add config file
         if (!fonts["font1"].loadFromFile("arial.ttf")) {
             std::cout << "Can't load font1" << std::endl;
         }

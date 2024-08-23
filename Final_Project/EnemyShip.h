@@ -24,7 +24,7 @@ public:
 private:
     sf::RectangleShape enemyShape;
     Resources maxLoot;
-    int health;  // Здоров'я ворога
-    int damage;  // Сила ворога
+    int health;
+    int damage;
 
 };

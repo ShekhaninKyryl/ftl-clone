@@ -41,10 +41,10 @@ void Ship::update(float deltaTime, Map* map) {
         double distance = sqrt(pow(direction.x, 2) + pow(direction.y, 2));
 
         if (distance > 1.f) {
-            direction /= static_cast<float>(distance); // Нормалізація вектора напрямку
-            shipShape.move(direction * speed * deltaTime); // Рух по напрямку
+            direction /= static_cast<float>(distance);
+            shipShape.move(direction * speed * deltaTime);
         }
-        else dockToStar(map); // Досягнуто цілі
+        else dockToStar(map);
     }
 }
 

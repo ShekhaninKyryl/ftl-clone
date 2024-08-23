@@ -4,8 +4,8 @@
 
 Game::Game() : window(sf::VideoMode(1200.f, 1000.f), "FTL Clone"), playerShip(100.f, 100.f), currentState(GameState::Map) {
     auto w_view = window.getView();
-    view.setSize(w_view.getSize()); // Initial view size
-    view.setCenter(w_view.getCenter()); // Center the view
+    view.setSize(w_view.getSize());
+    view.setCenter(w_view.getCenter());
     window.setView(view);
 
     map = new Map(20);

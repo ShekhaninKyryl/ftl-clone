@@ -9,6 +9,7 @@ class UI
 {
 public:
 	UI(Ship *player) {
+		//Add more UI
 		UIs.push_back(new UI_Player(player));
 	};
 
