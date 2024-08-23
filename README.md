@@ -117,8 +117,9 @@ NOTE: user can move only throuth hyperways
 ```
 - add ship texture;
 - add meteor textures;
+- add backgrounds;
 - set the ship's direction to the direction of travel;
-![image](https://github.com/user-attachments/assets/bfd7bf9c-aa76-41a3-adbf-792133ff6b46)
+![image](https://github.com/user-attachments/assets/0aa2bfb7-43f6-434a-be7f-fc6f6396e59b)
 ![image](https://github.com/user-attachments/assets/3346a764-4f38-47ff-8790-584bb79b4eae)
 
 
